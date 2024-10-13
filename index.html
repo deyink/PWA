@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50"/>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <title>PWA Test</title>
+</head>
+<body>
+    <header>
+        <h1>My Progressive Web App</h1>
+        <p>This is a simple PWA-enabled website.</p>
+    </header>
+    <main>
+        <button id="installButton" hidden>Install App</button>
+    </main>
+    
+    <script src="/app.js"></script>
+    <script>
+        // Check if service workers are supported
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(() => {
+                console.log('Service Worker Registered');
+            });
+        }
+    </script>
+</body>
+</html>
